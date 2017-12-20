@@ -1,0 +1,22 @@
+{
+  "name": "mall",
+  "version": "1.0.0",
+  "description": "这里是一些说明文字",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyt18215153215/mall.git"
+  },
+  "author": "arthur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lyt18215153215/mall/issues"
+  },
+  "homepage": "https://github.com/lyt18215153215/mall#readme",
+  "devDependencies": {
+    "webpack": "^1.15.0"
+  }
+}
