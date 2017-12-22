@@ -1,5 +1,4 @@
 
-  var $ = require('jquery');
-  $('.container').html('testFont')
-
-console.log("page index/ index.js");
+require('./index.css');
+require('../modules.js');
+console.log("page index -> index.js");
