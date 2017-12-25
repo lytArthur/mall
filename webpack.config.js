@@ -37,7 +37,8 @@ var config = {
             until: __dirname + '/src/until',
             page: __dirname + '/src/page',
             server: __dirname + '/src/server',
-            image: __dirname + '/src/image'
+            image: __dirname + '/src/image',
+            node_modules    : __dirname + '/node_modules',
         }
     },
     module: {
