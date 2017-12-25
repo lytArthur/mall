@@ -1,4 +1,12 @@
 
 require('./index.css');
 require('../modules.js');
-console.log("page index -> index.js");
+
+var _mm  = require("until/mm.js");
+
+var html = '<div>{{data}}</div>';
+var data = {
+    data: "11111"
+};
+_mm.renderHtml(html,data);
+console.log(_mm.renderHtml(html,data));

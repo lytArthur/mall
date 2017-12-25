@@ -1,2 +1,1 @@
-
-console.log("我是全局文件");
+require('./layout.css');
