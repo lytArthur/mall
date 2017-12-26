@@ -36,7 +36,7 @@ var config = {
         alias: {
             until: __dirname + '/src/until',
             page: __dirname + '/src/page',
-            server: __dirname + '/src/server',
+            service: __dirname + '/src/service',
             image: __dirname + '/src/image',
             node_modules    : __dirname + '/node_modules',
         }
