@@ -1,6 +1,7 @@
 
 require('./index.css');
 var _mm = require('until/mm.js');
+var templeteIndex = require('./index.string');
 
 //侧边导航
 var navSide = {
@@ -32,10 +33,10 @@ var navSide = {
     init: function(option){
         //合并选线
         $.extend(this.option, option);
-        this.renderNav();
+        this.renderNav(option);
     },
     //渲染导航菜单
-    renderNav: function(){
+    renderNav: function(option){
         //计算active的数据
         for(var i=0;i<this.option.navList.length;i++){
             if(this.option.navList[i].name == this.option.name){
@@ -43,8 +44,11 @@ var navSide = {
             }
         }
         //渲染list数据
-        var navHtml = _mm.renderHtml();
+        var navHtml  = _mm.renderHtml(templeteIndex, {
+            navList: this.option.navList
+        });
+        $(".nav-side").html(navHtml);
     }
 }
 
-module.exports = navSide.init();
+module.exports = navSide;
