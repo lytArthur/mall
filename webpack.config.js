@@ -21,10 +21,10 @@ var getHtmlConfig     = function (name, title) {
 
 var config = {
     entry: {
-        'common': ['./src/page/common/index.js'],
-        'index' : ['./src/page/index/index.js'],
-        'login' : ['./src/page/login/index.js'],
-        'result': ['./src/page/result/index.js'],
+        'common'     : ['./src/page/common/index.js'],
+        'index'      : ['./src/page/index/index.js'],
+        'user-login' : ['./src/page/user-login/index.js'],
+        'result'     : ['./src/page/result/index.js'],
     },
     output: {
         path       : './dist',
@@ -59,7 +59,7 @@ var config = {
         //把css文件单独打包到dist文件中
         new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin(getHtmlConfig('index' , '主页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login' , '登陆页面')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login' , '登陆页面')),
         new HtmlWebpackPlugin(getHtmlConfig('result' , '操作结果'))
     ]
 };

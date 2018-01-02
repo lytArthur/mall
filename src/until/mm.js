@@ -11,7 +11,7 @@ var conf = {
      request : function(param){
          var _this = this;
          $.ajax({
-            type       : param.type || 'get',
+            type       : param.method || 'GET',
             url        : param.url  || '',
             dataType   : param.type || 'json',
             data       : param.data || '',
@@ -34,7 +34,7 @@ var conf = {
          });
      },
      doLogin      : function(){
-         window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+         window.location.href = './user-loginuser-login.html?redirect=' + encodeURIComponent(window.location.href);
      },
      //获取服务器地址
      getServerUrl : function(path){

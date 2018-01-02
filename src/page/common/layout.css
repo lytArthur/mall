@@ -99,3 +99,20 @@ input[type='checkbox']{
     background: url(../../image/icon/loading.gif) no-repeat;
     opacity: .6;
 }
+.footer{
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.footer .links{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.footer .links .link{
+    padding: 0 10px;
+}
+.footer .copyright{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
