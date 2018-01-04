@@ -16,7 +16,7 @@ var conf = {
             dataType   : param.type || 'json',
             data       : param.data || '',
             success    : function(res){
-                if(res.status === 0){
+                if(res.status === 0){               
                     typeof success === 'function' && param.success(res.data, res.msg);
                 }
                 //如果没有登录，强制进行登录；
