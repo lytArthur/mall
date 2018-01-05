@@ -22,13 +22,13 @@ var _user = {
         })
     },
     // 用户注册
-    register: function (userInfo, resolve, reject) {
+    register : function(userInfo, resolve, reject){
         _mm.request({
-            url: _mm.getServerUrl('/user/register.do'),
-            data: userInfo,
-            method: 'POST',
-            success: resolve,
-            error: reject
+            url     : _mm.getServerUrl('/user/register.do'),
+            data    : userInfo,
+            method  : 'POST',
+            success : resolve,
+            error   : reject
         });
     },
     // 检查用户名
@@ -56,6 +56,16 @@ var _user = {
             error   : reject
         });
     },
+        // 重置密码
+        resetPassword : function(userInfo, resolve, reject){
+            _mm.request({
+                url     : _mm.getServerUrl('/user/forget_reset_password.do'),
+                data    : userInfo,
+                method  : 'POST',
+                success : resolve,
+                error   : reject
+            });
+        },
     // 检查密码提示问题答案
     checkAnswer: function (userInfo, resolve, reject) {
         _mm.request({

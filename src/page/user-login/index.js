@@ -38,7 +38,7 @@ var page = {
         if(validateresult.status){
             //成功  提交信息
             _user.login(formData,function(res){
-                window.location.href = _mm.getUrlParam('redirect') || './index.html'
+                window.location.href = _mm.getUrlParama('redirect') || './index.html'
             }, function(errMsg){
                 formError(errMsg)
             });

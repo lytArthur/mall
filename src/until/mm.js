@@ -17,19 +17,20 @@ var conf = {
             data       : param.data || '',
             success    : function(res){
                 if(res.status === 0){               
-                    typeof success === 'function' && param.success(res.data, res.msg);
+                    // typeof success === 'function' && param.success(res.data, res.msg);
+                    typeof param.success === 'function' && param.success(res.data, res.msg);
                 }
                 //如果没有登录，强制进行登录；
                 else if(res.status === 10){
                     _this.doLogin();
                 }
-                //请求成功 但是
+                //请求成功 
                 else if(res.status === 1){
-                    typeof error === 'function' && param.error(res.msg);
+                    typeof param.error === 'function' && param.error(res.msg);
                 }
             },
             error      :function(res){
-                typeof error === 'function' && param.error(res.statusText);
+                typeof param.error === 'function' && param.error(res.statusText);
             }    
          });
      },

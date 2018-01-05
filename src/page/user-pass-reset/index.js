@@ -40,10 +40,9 @@ var page = {
         // 用户名存在
         if(username){
             _user.getQuestion(username, function(res){
-                console.log('0');
                 _this.data.username = username;
                 _this.data.question = res;
-                this.loadStepQuestion();
+                _this.loadStepQuestion();
             }, function(errMsg){
                 formError.show(errMsg);
             });
@@ -76,6 +75,30 @@ var page = {
             formError.show('请输入密码提示问题答案');
         }
     });
+
+            // 输入新密码后的按钮点击
+            $('#submit-password').click(function(){
+                var password = $.trim($('#password').val());
+                // 密码不为空
+                if(password && password.length >= 6){
+                    // 检查密码提示问题答案
+                    _user.resetPassword({
+                        username        : _this.data.username,
+                        passwordNew     : password,
+                        forgetToken     : _this.data.token
+                    }, function(res){
+                        window.location.href = './result.html?type=pass-reset';
+                    }, function(errMsg){
+                        formError.show(errMsg);
+                    });
+                }
+                // 密码为空
+                else{
+                    formError.show('请输入不少于6位的新密码');
+                }
+            });
+
+
     },
     onLoad: function () {
         this.loadStepUsername();

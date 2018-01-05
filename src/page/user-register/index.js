@@ -56,10 +56,10 @@ var page = {
         validateresult = this.formValidate(formData);
         if (validateresult.status) {
             //成功  提交信息
-            _user.login(formData, function (res) {
+            _user.register(formData, function (res) {
                 window.location.href = './result.html?type=register';
             }, function (errMsg) {
-                formError(errMsg)
+                formError.show(errMsg);
             });
         } else {
             //失败  提示信息
