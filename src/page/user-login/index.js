@@ -40,7 +40,7 @@ var page = {
             _user.login(formData,function(res){
                 window.location.href = _mm.getUrlParama('redirect') || './index.html'
             }, function(errMsg){
-                formError(errMsg)
+                formError.show(errMsg)
             });
         } else {
             //失败  提示信息

@@ -35,7 +35,7 @@ var conf = {
          });
      },
      doLogin      : function(){
-         window.location.href = './user-loginuser-login.html?redirect=' + encodeURIComponent(window.location.href);
+         window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
      },
      //获取服务器地址
      getServerUrl : function(path){

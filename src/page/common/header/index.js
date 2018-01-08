@@ -5,6 +5,7 @@ var _mm = require('until/mm.js');
 var header = {
     Init: function () {
         this.BindEvent();
+        this.OnLoad();
     },
     OnLoad: function () {
         var keyword = getUrlParam('keyword');
