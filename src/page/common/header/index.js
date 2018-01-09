@@ -8,7 +8,7 @@ var header = {
         this.OnLoad();
     },
     OnLoad: function () {
-        var keyword = getUrlParam('keyword');
+        var keyword = _mm.getUrlParama('keyword');
         if (keyword) {
             $('#search-input').val(keyword);
         }
