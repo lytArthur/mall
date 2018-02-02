@@ -2,7 +2,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var _product        = require('service/product.js');
-var _cart           = require('service/cart-server.js');
+// var _cart           = require('service/cart-server.js');
 var templateIndex   = require('./index.string');
 var _mm             = require('until/mm.js');
 
@@ -62,6 +62,7 @@ var page = {
             $pageWrap.html('<div class="loading"></div>');
             // 请求detail信息
             _product.getProductDetail(this.data.productId, function(res){
+                console.log(res);
                 _this.filter(res);
                 // 缓存住detail的数据
                 _this.data.detailInfo = res;
@@ -72,6 +73,10 @@ var page = {
                 $pageWrap.html('<p class="err-tip">此商品太淘气，找不到了</p>');
             });
      },
+     filter: function(data){
+        data.subImages = data.subImages.split(',');
+        console.log(data.subImages);
+     }
 }
 
 $(function(){
