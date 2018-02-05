@@ -4,7 +4,7 @@ require('./index.css');
 //登录退出逻辑
 var _mm = require('until/mm.js');
 var _user = require('service/user-server.js');
-var _cart = require('service/cart-server.js');
+var _cart = require('service/cart.js');
 
 var nav = {
     init: function(){

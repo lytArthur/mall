@@ -37,7 +37,8 @@ var page = {
         validateresult = this.formValidate(formData);
         if(validateresult.status){
             //成功  提交信息
-            _user.login(formData,function(res){
+            _user.login(formData, function(res){
+                console.log(_mm.getUrlParama('redirect'));
                 window.location.href = _mm.getUrlParama('redirect') || './index.html'
             }, function(errMsg){
                 formError.show(errMsg)
