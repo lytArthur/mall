@@ -2,7 +2,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var _product        = require('service/product.js');
-// var _cart           = require('service/cart-server.js');
+var _cart           = require('service/cart.js');
 var templateIndex   = require('./index.string');
 var _mm             = require('until/mm.js');
 
@@ -55,7 +55,7 @@ var page = {
     },
     //加载商品详情信息
     loadDetail: function(){
-           var _this       = this,
+           var _this        = this,
                 html        = '',
                 $pageWrap   = $('.page-wrap');
             // loading

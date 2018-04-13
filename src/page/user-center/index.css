@@ -1,10 +1,20 @@
-.form-line{
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
-}
-.form-line .label{
-    display: inline-block;
-    width: 60px;
+.page-wrap{
+    padding: 30px 0;
+    margin-top: 20px;
     text-align: center;
+    background: #fff;
+}
+.result-con{
+    display: none;
+}
+.result-con .result-title{
+    color: #555;
+}
+.result-con .result-content{
+    margin-top: 20px;
+}
+.result-con .result-content .link{
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
 }
