@@ -34,6 +34,7 @@ var config = {
         'user-center-update'  : ['./src/page/user-center-update/index.js'],
         'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
         'result'           : ['./src/page/result/index.js'],
+        'payment'           : ['./src/page/payment/index.js'],
     },
     output: {
         path       : './dist',
@@ -56,7 +57,14 @@ var config = {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
-            { test: /\.string$/, loader: 'html-loader' }
+            {
+                test: /\.string$/, 
+                loader: 'html-loader',
+                query : {
+                    minimize : true,
+                    removeAttributeQuotes : false
+                }
+            }
         ]
     },
     plugins: [
@@ -72,6 +80,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('detail' , '商品详情页面')),
         new HtmlWebpackPlugin(getHtmlConfig('cart' , '购物车页面')),
         new HtmlWebpackPlugin(getHtmlConfig('order-confirm' , '订单确认页')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login' , '登陆页面')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register' , '注册页面')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset' , '找回密码')),

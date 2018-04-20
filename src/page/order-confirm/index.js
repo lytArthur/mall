@@ -94,6 +94,9 @@ var page = {
         var _this       = this;
         $('.address-con').html('<div class="loading"></div>');
         // 获取地址列表
+        // console.log(_address.getAddressList(function(res){
+        //     console.log(res);
+        // }));
         _address.getAddressList(function(res){
             _this.addressFilter(res);
             var addressListHtml = _mm.renderHtml(templateAddress, res);
@@ -122,13 +125,12 @@ var page = {
     loadProductList : function(){
         var _this       = this;
         $('.product-con').html('<div class="loading"></div>');
-        // 获取地址列表
         _order.getProductList(function(res){
             var productListHtml = _mm.renderHtml(templateProduct, res);
             $('.product-con').html(productListHtml);
         }, function(errMsg){
             $('.product-con').html('<p class="err-tip">商品信息加载失败，请刷新后重试</p>');
-        })
+        });
     },
 };
 $(function(){

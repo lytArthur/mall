@@ -16,6 +16,7 @@ var conf = {
             dataType   : param.type || 'json',
             data       : param.data || '',
             success    : function(res){
+                //请求成功
                 if(res.status === 0){               
                     // typeof success === 'function' && param.success(res.data, res.msg);
                     typeof param.success === 'function' && param.success(res.data, res.msg);
@@ -24,7 +25,7 @@ var conf = {
                 else if(res.status === 10){
                     _this.doLogin();
                 }
-                //请求成功 
+                 // 请求数据错误
                 else if(res.status === 1){
                     typeof param.error === 'function' && param.error(res.msg);
                 }
